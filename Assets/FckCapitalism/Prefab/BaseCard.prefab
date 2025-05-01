@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7804345321952007297}
   - component: {fileID: 5466295084436393400}
   - component: {fileID: 843837060905094720}
-  - component: {fileID: 7094142513938542092}
+  - component: {fileID: 1708132092952279847}
   m_Layer: 0
   m_Name: BaseCard
   m_TagString: Untagged
@@ -100,15 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc3c6d05c7fbed48af881b4d1b6d1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &7094142513938542092
-BoxCollider2D:
+  cardSprite: {fileID: 7497636373584415054}
+--- !u!65 &1708132092952279847
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575021549082918822}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -117,34 +116,12 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2023822265124744648
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +288,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1928150243586166613}
   - component: {fileID: 3306849930829161695}
-  - component: {fileID: 6269631324944677418}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -386,18 +362,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6269631324944677418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2871497701491271224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc3c6d05c7fbed48af881b4d1b6d1aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6571784421596988860
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +372,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3009065790488328374}
   - component: {fileID: 971371910814200941}
-  - component: {fileID: 282886111729326120}
   m_Layer: 0
   m_Name: Card (1)
   m_TagString: Untagged
@@ -483,15 +446,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &282886111729326120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6571784421596988860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc3c6d05c7fbed48af881b4d1b6d1aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

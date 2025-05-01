@@ -34,6 +34,7 @@ namespace Card
             for (int i = 0; i < numberOfCard; i++)
             {
                 BaseCardController newCard = Instantiate(cardPrefab, transform);
+                newCard.Initialize(i);
 
                 float xPos = startX + i * xPadding;
 
@@ -44,6 +45,16 @@ namespace Card
 
                 newCard.transform.localPosition = new Vector3(xPos, yOffset, 0);
                 newCard.transform.localRotation = Quaternion.Euler(0, 0, zRot);
+            }
+        }
+
+        private void UpdateCardPosition()
+        {
+            foreach (BaseCardController card in cardsInHand)
+            {
+                float t = (float)cardsInHand.IndexOf(card) / (numberOfCard - 1f);
+                float yOffset = -Mathf.Pow(t - 0.5f, 2) * 4f * arcHeight + arcHeight;
+                card.transform.DOLocalMoveY(yOffset, 0.5f);
             }
         }
     }
