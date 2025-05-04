@@ -101,6 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSprite: {fileID: 7497636373584415054}
+  landscapeMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!65 &1708132092952279847
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -23,26 +23,14 @@ namespace Card
             defaultScale = transform.localScale.x;
         }
 
-        private void OnEnable()
-        {
-            BaseCardController.OnCardStartHover += BaseCardController_OnCardStartHover;
-            BaseCardController.OnCardEndHover += BaseCardController_OnCardEndHover;
-        }
-
-        private void BaseCardController_OnCardStartHover(BaseCardController targetCard)
+        private void OnMouseEnter()
         {
             HoverAnimation(hoverY, hoverScale);
         }
 
-        private void BaseCardController_OnCardEndHover(BaseCardController controller)
+        private void OnMouseExit()
         {
             HoverAnimation(defaultY, defaultScale);
-        }
-
-        private void OnDisable()
-        {
-            BaseCardController.OnCardStartHover -= BaseCardController_OnCardStartHover;
-            BaseCardController.OnCardEndHover -= BaseCardController_OnCardEndHover;
         }
 
         private void HoverAnimation(float targetYPosition, float targetScale)

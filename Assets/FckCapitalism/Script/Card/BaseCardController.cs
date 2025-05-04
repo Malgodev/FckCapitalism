@@ -14,9 +14,7 @@ namespace Card
         private int index;
 
         [SerializeField] private Transform cardSprite;
-
-        public static event Action<BaseCardController> OnCardStartHover;
-        public static event Action<BaseCardController> OnCardEndHover;
+        [SerializeField] private LayerMask landscapeMask;
 
         // Caching
         Vector3 defaultPosition;
@@ -31,12 +29,7 @@ namespace Card
         public void Initialize(int index)
         {
             this.index = index;
-            cardCollider.center = new Vector3(0, 0, -index);
-        }
-
-        private void OnMouseEnter()
-        {
-            OnCardStartHover?.Invoke(this);
+            cardCollider.center = new Vector3(0, 0, -index / 100f);
         }
 
         private void OnMouseDrag()
@@ -49,12 +42,10 @@ namespace Card
         private void OnMouseUp()
         {
             // TODO: Check if drag to valid landscape
-            SetDefaultPosition();
-        }
+            Collider2D targetLandscape = Physics2D.OverlapPoint(MouseUtility.GetMouseWorldPosition(), landscapeMask);
+            Debug.Log(targetLandscape.name);
 
-        private void OnMouseExit()
-        {
-            OnCardEndHover?.Invoke(this);
+            SetDefaultPosition();
         }
 
         private void SetDefaultPosition()

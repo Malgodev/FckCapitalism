@@ -3,8 +3,23 @@ using UnityEngine;
 
 namespace Landscape
 {
-    public abstract class BaseLandscapeController : MonoBehaviour
+    public enum LandscapeType
     {
+        Electronic,
+        Port,
+        Administrative,
+        Factory,
+        Mountain,
+        City,
+        Wasteland,
+        Jungle,
+        Slum,
+    }
+
+    public class BaseLandscapeController : MonoBehaviour
+    {
+        [SerializeField] private LandscapeType landscapeType;
+
         protected virtual void Start()
         {
 

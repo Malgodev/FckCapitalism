@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 20784471}
   - component: {fileID: 20784472}
   - component: {fileID: 20784473}
+  - component: {fileID: 20784474}
   m_Layer: 0
   m_Name: CardHolder
   m_TagString: Untagged
@@ -187,6 +188,51 @@ MonoBehaviour:
   hoverScale: 1.2
   hoverY: -17
   hoverDuration: 0.2
+--- !u!61 &20784474
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20784470}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 30, y: 8}
+  m_EdgeRadius: 0
 --- !u!1 &88073507
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,7 +244,7 @@ GameObject:
   - component: {fileID: 88073509}
   - component: {fileID: 88073508}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22852,7 +22898,8 @@ GameObject:
   - component: {fileID: 784870004}
   - component: {fileID: 784870003}
   - component: {fileID: 784870005}
-  m_Layer: 0
+  - component: {fileID: 784870006}
+  m_Layer: 6
   m_Name: Jungle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23661,6 +23708,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &784870006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784870001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 7
 --- !u!1 &856210692
 GameObject:
   m_ObjectHideFlags: 0
@@ -23673,7 +23733,8 @@ GameObject:
   - component: {fileID: 856210695}
   - component: {fileID: 856210694}
   - component: {fileID: 856210696}
-  m_Layer: 0
+  - component: {fileID: 856210697}
+  m_Layer: 6
   m_Name: Factory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24482,6 +24543,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &856210697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856210692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 3
 --- !u!1 &1127221094
 GameObject:
   m_ObjectHideFlags: 0
@@ -24494,7 +24568,8 @@ GameObject:
   - component: {fileID: 1127221097}
   - component: {fileID: 1127221096}
   - component: {fileID: 1127221098}
-  m_Layer: 0
+  - component: {fileID: 1127221099}
+  m_Layer: 6
   m_Name: Wasteland
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25303,6 +25378,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1127221099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127221094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 6
 --- !u!1 &1212202323
 GameObject:
   m_ObjectHideFlags: 0
@@ -25315,7 +25403,8 @@ GameObject:
   - component: {fileID: 1212202326}
   - component: {fileID: 1212202325}
   - component: {fileID: 1212202327}
-  m_Layer: 0
+  - component: {fileID: 1212202328}
+  m_Layer: 6
   m_Name: Port
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26124,6 +26213,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1212202328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212202323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 2
 --- !u!1 &1560055624
 GameObject:
   m_ObjectHideFlags: 0
@@ -26136,7 +26238,8 @@ GameObject:
   - component: {fileID: 1560055627}
   - component: {fileID: 1560055626}
   - component: {fileID: 1560055628}
-  m_Layer: 0
+  - component: {fileID: 1560055629}
+  m_Layer: 6
   m_Name: Mountain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26945,6 +27048,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1560055629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560055624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 4
 --- !u!1 &1620776035
 GameObject:
   m_ObjectHideFlags: 0
@@ -26957,7 +27073,8 @@ GameObject:
   - component: {fileID: 1620776038}
   - component: {fileID: 1620776037}
   - component: {fileID: 1620776039}
-  m_Layer: 0
+  - component: {fileID: 1620776040}
+  m_Layer: 6
   m_Name: City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27766,37 +27883,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1 &1733531072
-GameObject:
+--- !u!114 &1620776040
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1733531073}
-  m_Layer: 0
-  m_Name: === Background ===
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1733531073
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1733531072}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1620776035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 5
 --- !u!1 &1857055841
 GameObject:
   m_ObjectHideFlags: 0
@@ -27854,7 +27953,8 @@ GameObject:
   - component: {fileID: 1883277111}
   - component: {fileID: 1883277110}
   - component: {fileID: 1883277112}
-  m_Layer: 0
+  - component: {fileID: 1883277113}
+  m_Layer: 6
   m_Name: Adminnistrative
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28663,6 +28763,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1883277113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1883277108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 2
 --- !u!1 &1887370716
 GameObject:
   m_ObjectHideFlags: 0
@@ -28675,7 +28788,8 @@ GameObject:
   - component: {fileID: 1887370719}
   - component: {fileID: 1887370718}
   - component: {fileID: 1887370720}
-  m_Layer: 0
+  - component: {fileID: 1887370721}
+  m_Layer: 6
   m_Name: Electronic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29484,6 +29598,19 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &1887370721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887370716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 0
 --- !u!1 &2036186051
 GameObject:
   m_ObjectHideFlags: 0
@@ -29665,7 +29792,8 @@ GameObject:
   - component: {fileID: 2134408295}
   - component: {fileID: 2134408294}
   - component: {fileID: 2134408296}
-  m_Layer: 0
+  - component: {fileID: 2134408297}
+  m_Layer: 6
   m_Name: Slum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30474,14 +30602,26 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &2134408297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134408292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a868790e626774198ac2e54becfaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  landscapeType: 8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1733531073}
-  - {fileID: 2036186055}
-  - {fileID: 2058440207}
   - {fileID: 88073509}
   - {fileID: 20784471}
   - {fileID: 1857055843}
+  - {fileID: 2036186055}
+  - {fileID: 2058440207}
