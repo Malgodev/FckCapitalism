@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 653fff222530243449715e7971e9f06d
+guid: c434f9a38bda3a549bd7557fdda618b9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 64
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638821722166891443
+  platformSettingsDirtyTick: 638822561372619431
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: money
+  - name: Calendar
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: -0.07272727}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 60
-      height: 43
-    spriteID: fc7998920f3dba8479e48f458665ff8f
+      width: 62
+      height: 55
+    spriteID: 09e6c1f90ca9b674c8722a4ae0b71ace
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,21 +144,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 258592994
-    name: money
+    guid: 2140056664
+    name: Calendar
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: money
+    - name: Calendar
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 2
-        y: 8
-        width: 60
-        height: 43
-      spriteId: fc7998920f3dba8479e48f458665ff8f
+        x: 1
+        y: 4
+        width: 62
+        height: 55
+      spriteId: 09e6c1f90ca9b674c8722a4ae0b71ace
     linkedCells: []
     parentIndex: -1
   platformSettings:

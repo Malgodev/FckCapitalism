@@ -1,0 +1,3 @@
+[submodule "Assets/MalgoUltilities"]
+	path = Assets/MalgoUltilities
+	url = https://github.com/Malgodev/UnityUltilities.git

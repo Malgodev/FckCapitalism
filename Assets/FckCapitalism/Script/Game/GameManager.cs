@@ -1,12 +1,16 @@
+using Malgo.Singleton;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    private void Awake()
+    public override void Init()
     {
         Application.targetFrameRate = 60;
     }
 
+    private void Update()
+    {
+    }
 }
