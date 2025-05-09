@@ -12,6 +12,8 @@ namespace Malgo.FckCapitalism
         [SerializeField] private float currentMoney = 0f;
         public float CurrentMoney => currentMoney;
 
+        public static event Action<float, float> OnMoneyChanged;
+
         public override void Init()
         {
 
@@ -20,6 +22,24 @@ namespace Malgo.FckCapitalism
         private void Update()
         {
             currentTime.AddTime(Time.deltaTime);
+        }
+
+        private void IncreaseMoney(float value)
+        {
+            currentMoney += value;
+            OnMoneyChanged?.Invoke(currentMoney, value);
+        }
+
+        private void SetMoney(float value)
+        {
+            currentMoney = value;
+            OnMoneyChanged?.Invoke(currentMoney, currentMoney - value);
+        }
+
+        private void DecreaseMoney(float value)
+        {
+            currentMoney -= value;
+            OnMoneyChanged?.Invoke(currentMoney, -value);
         }
     }
 
