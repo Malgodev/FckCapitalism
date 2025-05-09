@@ -3,7 +3,7 @@ using Malgo.Utilities;
 using TMPro;
 using UnityEngine;
 
-namespace UI
+namespace Malgo.FckCapitalism.UI
 {
     public class MoneyUIController : MonoBehaviour
     {
