@@ -42,8 +42,8 @@ namespace Malgo.FckCapitalism.Landscape
         private float updateInterval = 1f;
         private float updateTimer = 0f;
 
-
         [Header("Landscape stat")]
+        [SerializeField] 
         protected float baseProfit = 10;
         protected float profitMultiplier = 1;
         #endregion
@@ -59,6 +59,11 @@ namespace Malgo.FckCapitalism.Landscape
 
         protected virtual void Update()
         {
+            if (GameManager.Instance.GameState != GameState.Playing)
+            {
+                return;
+            }
+
             updateTimer += Time.deltaTime;
 
             if (updateTimer >= updateInterval)

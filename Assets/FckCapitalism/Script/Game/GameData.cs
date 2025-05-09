@@ -6,13 +6,22 @@ namespace Malgo.FckCapitalism
 {
     public class GameData : Singleton<GameData>
     {
-        [SerializeField] private Clock currentTime;
-        public Clock CurrentTime => currentTime;
-
+        #region Private fields
         [SerializeField] private float currentMoney = 0f;
+        [SerializeField] private float currentTime = 0f;
+
+        private float updateInterval = 1f;
+        private float updateTimer = 0f;
+        #endregion
+
+        #region Public fields
+        public float CurrentTime => currentTime;
         public float CurrentMoney => currentMoney;
+        #endregion
+
 
         public static event Action<float, float> OnMoneyChanged;
+        public static event Action<float> OnSecondPassed;
 
         public override void Init()
         {
@@ -22,11 +31,20 @@ namespace Malgo.FckCapitalism
         private void Start()
         {
             SetMoney(0f);
+            OnSecondPassed?.Invoke(currentTime);
         }
 
         private void Update()
         {
-            currentTime.AddTime(Time.deltaTime);
+            updateTimer += Time.deltaTime;
+
+            if (updateTimer >= updateInterval)
+            {
+                updateTimer = 0f;
+                
+                currentTime++;
+                OnSecondPassed?.Invoke(currentTime);
+            }
         }
 
         public void IncreaseMoney(float value)
@@ -45,27 +63,6 @@ namespace Malgo.FckCapitalism
         {
             currentMoney -= value;
             OnMoneyChanged?.Invoke(currentMoney, -value);
-        }
-    }
-
-    [Serializable]
-    public struct Clock
-    {
-        public float CurrentTime;
-        public float TimeScale; // 3 seconds = 1 month
-
-        public void AddTime(float deltaTime)
-        {
-            CurrentTime += deltaTime;
-        }
-
-        public string GetData()
-        {
-            int currentMonth = (int)(CurrentTime / TimeScale);
-            int year = (int)(currentMonth / 12) + 2025;
-            int month = currentMonth % 12 + 1;
-
-            return $"{year}/{month.ToString("D2")}";
         }
     }
 }

@@ -22,6 +22,21 @@ namespace Malgo.FckCapitalism
             UpdateGameState(gameState);
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                if (gameState == GameState.Pause)
+                {
+                    UpdateGameState(GameState.Playing);
+                }
+                else
+                {
+                    UpdateGameState(GameState.Pause);
+                }
+            }
+        }
+
         public void UpdateGameState(GameState targetGameState)
         {
             switch (gameState)

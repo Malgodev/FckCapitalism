@@ -323,6 +323,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30fe9abfcd5d32499b81b6e1d557334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
+  timeScale: 3
   calendarText: {fileID: 920974030}
 --- !u!1 &88073507
 GameObject:
@@ -29075,10 +29077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99178d7fb2d2b3747ac6684d805edd66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime:
-    CurrentTime: 0
-    TimeScale: 3
   currentMoney: 0
+  currentTime: 0
 --- !u!1 &1883277108
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,5 +14,10 @@ namespace Malgo.FckCapitalism.Landscape
                 specialStat = value;
             }
         }
+
+        protected override void HandleUpdate()
+        {
+
+        }
     }
 }

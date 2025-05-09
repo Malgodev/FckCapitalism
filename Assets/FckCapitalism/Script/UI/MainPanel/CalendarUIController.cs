@@ -1,37 +1,48 @@
 using Malgo.FckCapitalism;
+using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 namespace Malgo.FckCapitalism.UI
 {
     public class CalendarUIController : MonoBehaviour
     {
-        float updateInterval;
-        float lastUpdateTime = 0f;
+        [SerializeField] private float timeScale;
 
         [SerializeField] private TMP_Text calendarText;
 
         private void Awake()
         {
-            updateInterval = GameData.Instance.CurrentTime.TimeScale;
-            lastUpdateTime = updateInterval;
         }
 
-        private void Update()
+        private void OnEnable()
         {
-            lastUpdateTime += Time.deltaTime;
-
-            if (lastUpdateTime >= updateInterval)
-            {
-                lastUpdateTime = 0f;
-                UpdateCalendar();
-            }
+            GameData.OnSecondPassed += UpdateTime;
         }
 
-        private void UpdateCalendar()
+        private void UpdateTime(float currentTime)
         {
-            calendarText.text = GameData.Instance.CurrentTime.GetData();
+            UpdateCalendar(GetData(currentTime));
+        }
+
+        private void OnDisable()
+        {
+            GameData.OnSecondPassed -= UpdateTime;
+        }
+
+        private void UpdateCalendar(string calendar)
+        {
+            calendarText.text = calendar;
+        }
+
+        public string GetData(float time)
+        {
+            int currentMonth = (int)(time / timeScale);
+            int year = (int)(currentMonth / 12) + 2025;
+            int month = currentMonth % 12 + 1;
+
+            return $"{year}/{month.ToString("D2")}";
         }
     }
-
 }
