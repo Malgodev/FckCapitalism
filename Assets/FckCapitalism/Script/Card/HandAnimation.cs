@@ -1,9 +1,7 @@
-using Card;
 using DG.Tweening;
-using System.Collections;
 using UnityEngine;
 
-namespace Card
+namespace Malgo.FckCapitalism.Card
 {
     public class HandAnimation : MonoBehaviour
     {

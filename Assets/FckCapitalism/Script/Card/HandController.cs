@@ -1,16 +1,11 @@
 using DG.Tweening;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Card
+namespace Malgo.FckCapitalism.Card
 {
     public class HandController : MonoBehaviour
     {
-
-
-
         [Header("Card Information")]
         [SerializeField] private int numberOfCard;
         [SerializeField] private BaseCardController cardPrefab;

@@ -1,44 +1,46 @@
-using JetBrains.Annotations;
 using Malgo.Singleton;
 using System;
 using UnityEngine;
 
-public class GameData : Singleton<GameData>
+namespace Malgo.FckCapitalism
 {
-    [SerializeField] private Clock currentTime;
-    public Clock CurrentTime => currentTime;
-
-    [SerializeField] private float currentMoney = 0f;
-    public float CurrentMoney => currentMoney;
-
-    public override void Init()
+    public class GameData : Singleton<GameData>
     {
-        
+        [SerializeField] private Clock currentTime;
+        public Clock CurrentTime => currentTime;
+
+        [SerializeField] private float currentMoney = 0f;
+        public float CurrentMoney => currentMoney;
+
+        public override void Init()
+        {
+
+        }
+
+        private void Update()
+        {
+            currentTime.AddTime(Time.deltaTime);
+        }
     }
 
-    private void Update()
+    [Serializable]
+    public struct Clock
     {
-        currentTime.AddTime(Time.deltaTime);
-    }
-}
+        public float CurrentTime;
+        public float TimeScale; // 3 seconds = 1 month
 
-[Serializable]
-public struct Clock
-{
-    public float CurrentTime;
-    public float TimeScale; // 3 seconds = 1 month
+        public void AddTime(float deltaTime)
+        {
+            CurrentTime += deltaTime;
+        }
 
-    public void AddTime(float deltaTime)
-    {
-        CurrentTime += deltaTime;
-    }
+        public string GetData()
+        {
+            int currentMonth = (int)(CurrentTime / TimeScale);
+            int year = (int)(currentMonth / 12) + 2025;
+            int month = currentMonth % 12 + 1;
 
-    public string GetData()
-    {
-        int currentMonth = (int)(CurrentTime / TimeScale);
-        int year = (int)(currentMonth / 12) + 2025;
-        int month = currentMonth % 12 + 1;
-
-        return $"{year}/{month.ToString("D2")}";
+            return $"{year}/{month.ToString("D2")}";
+        }
     }
 }

@@ -1,16 +1,26 @@
 using Malgo.Singleton;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager>
+namespace Malgo.FckCapitalism
 {
-    public override void Init()
+    public class GameManager : Singleton<GameManager>
     {
-        Application.targetFrameRate = 60;
+        [SerializeField] private GameState gameState = GameState.MainMenu;
+        public GameState GameState => gameState'
+
+        public override void Init()
+        {
+            DontDestroyOnLoad(this.gameObject);
+            Application.targetFrameRate = 60;
+        }
+
     }
 
-    private void Update()
+    public enum GameState
     {
+        MainMenu,
+        Playing,
+        Pause,
+        End,
     }
 }

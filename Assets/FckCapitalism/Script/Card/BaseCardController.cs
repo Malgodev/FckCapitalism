@@ -1,11 +1,7 @@
-using DG.Tweening;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-namespace Card
+namespace Malgo.FckCapitalism.Card
 {
     public class BaseCardController : MonoBehaviour
     {

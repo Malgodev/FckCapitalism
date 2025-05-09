@@ -1,4 +1,4 @@
-using Card;
+using Malgo.FckCapitalism.Card;
 using UnityEngine;
 
 namespace Landscape
