@@ -1,5 +1,6 @@
 using Malgo.FckCapitalism.Card;
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Malgo.FckCapitalism.Landscape
@@ -13,7 +14,7 @@ namespace Malgo.FckCapitalism.Landscape
         Mountain,
         City,
         Wasteland,
-        Jungle,
+        Forest,
         Slum,
     }
 
@@ -43,8 +44,8 @@ namespace Malgo.FckCapitalism.Landscape
 
 
         [Header("Landscape stat")]
-        protected float baseProfit;
-        protected float profitMultiplier;
+        protected float baseProfit = 10;
+        protected float profitMultiplier = 1;
         #endregion
 
         #region Public fields
@@ -67,9 +68,9 @@ namespace Malgo.FckCapitalism.Landscape
             }
         }
 
-        private void HandleUpdate()
+        protected virtual void HandleUpdate()
         {
-            
+            GameData.Instance.IncreaseMoney(Profit);
         }
 
         #region Card interaction

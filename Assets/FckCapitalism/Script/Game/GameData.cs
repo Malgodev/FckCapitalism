@@ -19,24 +19,29 @@ namespace Malgo.FckCapitalism
 
         }
 
+        private void Start()
+        {
+            SetMoney(0f);
+        }
+
         private void Update()
         {
             currentTime.AddTime(Time.deltaTime);
         }
 
-        private void IncreaseMoney(float value)
+        public void IncreaseMoney(float value)
         {
             currentMoney += value;
             OnMoneyChanged?.Invoke(currentMoney, value);
         }
 
-        private void SetMoney(float value)
+        public void SetMoney(float value)
         {
             currentMoney = value;
             OnMoneyChanged?.Invoke(currentMoney, currentMoney - value);
         }
 
-        private void DecreaseMoney(float value)
+        public void DecreaseMoney(float value)
         {
             currentMoney -= value;
             OnMoneyChanged?.Invoke(currentMoney, -value);
