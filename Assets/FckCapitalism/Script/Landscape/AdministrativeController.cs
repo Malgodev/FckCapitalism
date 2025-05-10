@@ -13,7 +13,7 @@ namespace Malgo.FckCapitalism.Landscape
             }
         }
 
-        protected override void HandleUpdate()
+        protected override void HandleUpdate(float currentTime)
         {
             
         }

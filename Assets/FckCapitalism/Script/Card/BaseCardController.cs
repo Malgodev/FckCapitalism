@@ -39,7 +39,6 @@ namespace Malgo.FckCapitalism.Card
         {
             // TODO: Check if drag to valid landscape
             Collider2D targetLandscape = Physics2D.OverlapPoint(MouseUtility.GetMouseWorldPosition(), landscapeMask);
-            Debug.Log(targetLandscape?.name);
 
             SetDefaultPosition();
         }
