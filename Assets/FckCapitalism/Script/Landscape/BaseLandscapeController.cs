@@ -12,8 +12,8 @@ namespace Malgo.FckCapitalism.Landscape
         [Header("Landscape stat")]
         protected LandscapeType landscapeType;
 
-        protected float specialStat;
-        protected List<LandscapeStatData> landscapeStats;
+        [SerializeField] protected float specialStat;
+        [SerializeField] protected List<LandscapeStatData> landscapeStats;
 
         [SerializeField] private LandscapeData landscapeData;
         #endregion
@@ -24,6 +24,8 @@ namespace Malgo.FckCapitalism.Landscape
         #region Public fields
         public float SpecialStat => specialStat;
         public LandscapeType LandscapeType => landscapeType;
+        public List<LandscapeStatData> LandscapeStats => landscapeStats;
+
 
         public float Profit => GetLandscapeStat(LandscapeStat.Profit);
         public float Population => GetLandscapeStat(LandscapeStat.Population);
@@ -35,11 +37,16 @@ namespace Malgo.FckCapitalism.Landscape
         #endregion
 
         public static event Action<LandscapeType> OnSidePanelChanged;
+        public static event Action OnSidePanelUpdated;
 
         protected virtual void Awake()
         {
             landscapeType = landscapeData.landscape;
             landscapeStats = new List<LandscapeStatData>(landscapeData.landscapeStats);
+        }
+        private void Start()
+        {
+            OnSidePanelUpdated?.Invoke();
         }
 
         private void OnEnable()
@@ -57,7 +64,7 @@ namespace Malgo.FckCapitalism.Landscape
             GameData.Instance.IncreaseMoney(Profit);
         }
 
-        private float GetLandscapeStat(LandscapeStat stat)
+        public float GetLandscapeStat(LandscapeStat stat)
         {
             foreach (LandscapeStatData landscapeStat in landscapeStats)
             {
