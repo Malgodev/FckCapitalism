@@ -15,50 +15,50 @@ MonoBehaviour:
   specialStats:
   - landscapeType: 0
     name: Overload
-    icon: {fileID: 0}
+    icon: {fileID: -8873468148894196751, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 1
-    name: None
-    icon: {fileID: 0}
+    name: Contraband
+    icon: {fileID: -6730902422319922879, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 2
     name: Corruption
-    icon: {fileID: 0}
+    icon: {fileID: 8747543187618397662, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 3
     name: Automation
-    icon: {fileID: 0}
+    icon: {fileID: 4653214176208327868, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 4
     name: Ore Density
-    icon: {fileID: 0}
+    icon: {fileID: 8096715989591441297, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 5
     name: Dystopia
-    icon: {fileID: 0}
+    icon: {fileID: 8087076029084820110, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 6
     name: Decay
-    icon: {fileID: 0}
+    icon: {fileID: -948032406628923685, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 7
     name: Tree Density
-    icon: {fileID: 0}
+    icon: {fileID: 6629675558504714463, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   - landscapeType: 8
     name: Instability
-    icon: {fileID: 0}
+    icon: {fileID: -400810626712146839, guid: 686e6cf6de14418458fe72ffd7ab4888, type: 3}
   sideUIDataStructs:
   - statType: 0
-    icon: {fileID: 0}
+    icon: {fileID: 5219975788097178905, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 0
   - statType: 1
-    icon: {fileID: 0}
+    icon: {fileID: 5700853124632689800, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 0
   - statType: 2
-    icon: {fileID: 0}
+    icon: {fileID: -4800951323950216836, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 1
   - statType: 3
-    icon: {fileID: 0}
+    icon: {fileID: 8555362652289691905, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 1
   - statType: 4
-    icon: {fileID: 0}
+    icon: {fileID: 9155733666541496126, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 1
   - statType: 5
-    icon: {fileID: 0}
+    icon: {fileID: 5482144171362389564, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 0
   - statType: 6
-    icon: {fileID: 0}
+    icon: {fileID: 4913892452552190561, guid: 95c7cf072dcc17f4eb5e43f440bae221, type: 3}
     statDisplayType: 1

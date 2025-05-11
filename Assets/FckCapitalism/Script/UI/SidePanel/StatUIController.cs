@@ -22,7 +22,7 @@ namespace Malgo.FckCapitalism.UI.SidePanel
         public void Initialize(LandscapeSpecialStat specialStat)
         {
             statDisplayType = StatDisplayType.Percentage;
-            //this.icon.sprite = specialStat.icon;
+            this.icon.sprite = specialStat.icon;
             this.titleText.text = specialStat.name;
 
             fill.SetActive(true);
@@ -32,7 +32,7 @@ namespace Malgo.FckCapitalism.UI.SidePanel
         {
             this.titleText.text = sideUIData.statType.ToString();
             this.statDisplayType = sideUIData.statDisplayType;
-            //this.icon.sprite = icon;
+            this.icon.sprite = sideUIData.icon;
 
             fill.SetActive(statDisplayType == StatDisplayType.Percentage);
             text.gameObject.SetActive(statDisplayType == StatDisplayType.Number);
