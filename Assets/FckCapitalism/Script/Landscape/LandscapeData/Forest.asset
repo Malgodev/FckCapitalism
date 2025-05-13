@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Forest
   m_EditorClassIdentifier: 
   landscape: 7
+  specialStatValue: 100
   landscapeStats:
   - Stat: 0
     Value: 10

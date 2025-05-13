@@ -14,18 +14,29 @@ namespace Malgo.FckCapitalism.Card
 
         // Caching
         Vector3 defaultPosition;
+        Vector3 defaultRotation;
+
         Vector3 mousePosition;
 
         private void Awake()
         {
             cardCollider = GetComponent<BoxCollider>();
-            defaultPosition = cardSprite.localPosition;
         }
 
         public void Initialize(int index)
         {
             this.index = index;
-            cardCollider.center = new Vector3(0, 0, -index / 100f);
+            //cardCollider.center = new Vector3(0, 0, -index / 100f);
+
+            defaultPosition = cardSprite.localPosition;
+            defaultRotation = this.transform.localRotation.eulerAngles;
+        }
+
+        private void OnMouseEnter()
+        {
+            cardSprite.localRotation = Quaternion.Euler(-defaultRotation);
+            cardSprite.localPosition = defaultPosition + new Vector3(0, 1.2f, -11f);
+            cardSprite.localScale = Vector3.one * 1.2f;
         }
 
         private void OnMouseDrag()
@@ -41,6 +52,13 @@ namespace Malgo.FckCapitalism.Card
             Collider2D targetLandscape = Physics2D.OverlapPoint(MouseUtility.GetMouseWorldPosition(), landscapeMask);
 
             SetDefaultPosition();
+        }
+
+        private void OnMouseExit()
+        {
+            cardSprite.localScale = Vector3.one;
+            cardSprite.localRotation = Quaternion.Euler(Vector3.zero);
+            cardSprite.localPosition = defaultPosition;
         }
 
         private void SetDefaultPosition()

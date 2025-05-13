@@ -10,12 +10,9 @@ namespace Malgo.FckCapitalism.Landscape
         public LandscapeType landscape;
 
         [Header("Special stat")]
-        public string specialStatName;
-        public Sprite specialStatIcon;
         public float specialStatValue;
 
         public List<LandscapeStatData> landscapeStats;
-
     }
 
     public enum LandscapeType

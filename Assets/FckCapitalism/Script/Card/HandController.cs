@@ -29,7 +29,6 @@ namespace Malgo.FckCapitalism.Card
             for (int i = 0; i < numberOfCard; i++)
             {
                 BaseCardController newCard = Instantiate(cardPrefab, transform);
-                newCard.Initialize(i);
 
                 float xPos = startX + i * xPadding;
 
@@ -38,8 +37,10 @@ namespace Malgo.FckCapitalism.Card
 
                 float zRot = startAngle - i * angleDifferent;
 
-                newCard.transform.localPosition = new Vector3(xPos, yOffset, 0);
+                newCard.transform.localPosition = new Vector3(xPos, yOffset, -i);
                 newCard.transform.localRotation = Quaternion.Euler(0, 0, zRot);
+
+                newCard.Initialize(i);
             }
         }
 

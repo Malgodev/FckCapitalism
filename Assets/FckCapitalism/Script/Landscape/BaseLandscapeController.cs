@@ -43,6 +43,8 @@ namespace Malgo.FckCapitalism.Landscape
         {
             landscapeType = landscapeData.landscape;
             landscapeStats = new List<LandscapeStatData>(landscapeData.landscapeStats);
+
+            specialStat = landscapeData.specialStatValue;
         }
         private void Start()
         {

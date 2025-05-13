@@ -1,6 +1,7 @@
 using Malgo.FckCapitalism;
 using Malgo.Utilities;
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace Malgo.FckCapitalism.UI
     public class MoneyUIController : MonoBehaviour
     {
         [SerializeField] private TMP_Text moneyText;
+
+        IEnumerator ChangeMoneyUI;
 
         private void OnEnable()
         {
