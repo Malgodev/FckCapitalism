@@ -14,6 +14,7 @@ namespace Malgo.FckCapitalism.Landscape
 
         [SerializeField] protected float specialStat;
         [SerializeField] protected List<LandscapeStatData> landscapeStats;
+        [SerializeField] protected Dictionary<LandscapeStat, float> monthlyEffects;
 
         [SerializeField] private LandscapeData landscapeData;
         #endregion

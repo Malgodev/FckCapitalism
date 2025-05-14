@@ -42188,6 +42188,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711814433}
   m_CullTransparentMesh: 1
+--- !u!1 &731399521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 731399523}
+  - component: {fileID: 731399522}
+  m_Layer: 0
+  m_Name: Deck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &731399522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731399521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e25cd17a1ba7e74ca3e57715432807d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardList:
+  - {fileID: 11400000, guid: a58a05344c78fd147a768b9c771241e2, type: 2}
+  - {fileID: 11400000, guid: e2f8bd1806fa2d74ab0465edca081639, type: 2}
+--- !u!4 &731399523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731399521}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784870001
 GameObject:
   m_ObjectHideFlags: 0
@@ -50047,7 +50094,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f9416f95d175c1439665c827ceb5caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuCanvas: {fileID: 2094352479}
   gameCanvas: {fileID: 2034897783}
   pauseCanvas: {fileID: 1436706966}
   endCanvas: {fileID: 1042397487}
@@ -51000,6 +51046,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2058440207}
   - {fileID: 1857055843}
+  - {fileID: 731399523}
   - {fileID: 88073509}
   - {fileID: 20784471}
   - {fileID: 381316422}

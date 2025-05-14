@@ -26,6 +26,8 @@ namespace Malgo.FckCapitalism.Card
             float startX = -(numberOfCard - 1f) * xPadding / 2f;
             float startAngle = (numberOfCard - 1f) * angleDifferent / 2f;
 
+            List<CardData> cards = DeckController.Instance.GetHandCard(numberOfCard);
+
             for (int i = 0; i < numberOfCard; i++)
             {
                 BaseCardController newCard = Instantiate(cardPrefab, transform);
@@ -40,7 +42,7 @@ namespace Malgo.FckCapitalism.Card
                 newCard.transform.localPosition = new Vector3(xPos, yOffset, -i);
                 newCard.transform.localRotation = Quaternion.Euler(0, 0, zRot);
 
-                newCard.Initialize(i);
+                newCard.Initialize(i, cards[i]);
             }
         }
 

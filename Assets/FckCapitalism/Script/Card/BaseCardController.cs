@@ -1,3 +1,5 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using Utilities;
 
@@ -9,8 +11,14 @@ namespace Malgo.FckCapitalism.Card
 
         private int index;
 
-        [SerializeField] private Transform cardSprite;
+        [SerializeField] private Transform mainCard;
+        [SerializeField] private SpriteRenderer cardSprite;
         [SerializeField] private LayerMask landscapeMask;
+
+        [Header("Text")]
+        [SerializeField] private TMP_Text cardName;
+        [SerializeField] private TMP_Text initialEffect;
+        [SerializeField] private TMP_Text monthlyEffect;
 
         // Caching
         Vector3 defaultPosition;
@@ -25,20 +33,22 @@ namespace Malgo.FckCapitalism.Card
             cardCollider = GetComponent<BoxCollider>();
         }
 
-        public void Initialize(int index)
+        public void Initialize(int index, CardData cardData)
         {
             this.index = index;
-            //cardCollider.center = new Vector3(0, 0, -index / 100f);
+            cardName.text = cardData.cardName;
+            cardSprite.sprite = cardData.cardSprite;
 
-            defaultPosition = cardSprite.localPosition;
+
+            defaultPosition = mainCard.localPosition;
             defaultRotation = this.transform.localRotation.eulerAngles;
         }
 
         private void OnMouseEnter()
         {
-            cardSprite.localRotation = Quaternion.Euler(-defaultRotation);
-            cardSprite.localPosition = new Vector3(defaultPosition.x, 1.2f, -11f);
-            cardSprite.localScale = Vector3.one * 1.1f;
+            mainCard.localRotation = Quaternion.Euler(-defaultRotation);
+            mainCard.localPosition = new Vector3(defaultPosition.x, 1.2f, -11f);
+            mainCard.localScale = Vector3.one * 1.1f;
         }
 
         private void OnMouseDrag()
@@ -46,8 +56,8 @@ namespace Malgo.FckCapitalism.Card
             isDragging = true;
 
             mousePosition = MouseUtility.GetMouseWorldPosition();
-            mousePosition.z = cardSprite.position.z;
-            cardSprite.position = mousePosition;
+            mousePosition.z = mainCard.position.z;
+            mainCard.position = mousePosition;
         }
 
         private void OnMouseUp()
@@ -71,9 +81,9 @@ namespace Malgo.FckCapitalism.Card
 
         private void SetDefaultTransform()
         {
-            cardSprite.localScale = Vector3.one;
-            cardSprite.localRotation = Quaternion.Euler(Vector3.zero);
-            cardSprite.localPosition = defaultPosition;
+            mainCard.localScale = Vector3.one;
+            mainCard.localRotation = Quaternion.Euler(Vector3.zero);
+            mainCard.localPosition = defaultPosition;
         }
 
         private void OnDestroy()
