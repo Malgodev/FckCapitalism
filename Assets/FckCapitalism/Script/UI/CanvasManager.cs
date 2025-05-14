@@ -8,7 +8,6 @@ namespace Malgo.FckCapitalism.UI
 {
     public class CanvasManager : Singleton<CanvasManager>
     {
-        [SerializeField] private GameObject mainMenuCanvas;
         [SerializeField] private GameObject gameCanvas;
         [SerializeField] private GameObject pauseCanvas;
         [SerializeField] private GameObject endCanvas;
@@ -27,9 +26,6 @@ namespace Malgo.FckCapitalism.UI
         {
             switch (state)
             {
-                case GameState.MainMenu:
-                    EnablePanel(mainMenuCanvas);
-                    break;
                 case GameState.Playing:
                     EnablePanel(gameCanvas);
                     break;
@@ -44,7 +40,6 @@ namespace Malgo.FckCapitalism.UI
 
         private void EnablePanel(GameObject panel)
         {
-            mainMenuCanvas.SetActive(false);
             gameCanvas.SetActive(false);
             pauseCanvas.SetActive(false);
             endCanvas.SetActive(false);

@@ -18,6 +18,8 @@ namespace Malgo.FckCapitalism.Card
 
         Vector3 mousePosition;
 
+        private bool isDragging = false;
+
         private void Awake()
         {
             cardCollider = GetComponent<BoxCollider>();
@@ -35,12 +37,14 @@ namespace Malgo.FckCapitalism.Card
         private void OnMouseEnter()
         {
             cardSprite.localRotation = Quaternion.Euler(-defaultRotation);
-            cardSprite.localPosition = defaultPosition + new Vector3(0, 1.2f, -11f);
-            cardSprite.localScale = Vector3.one * 1.2f;
+            cardSprite.localPosition = new Vector3(defaultPosition.x, 1.2f, -11f);
+            cardSprite.localScale = Vector3.one * 1.1f;
         }
 
         private void OnMouseDrag()
         {
+            isDragging = true;
+
             mousePosition = MouseUtility.GetMouseWorldPosition();
             mousePosition.z = cardSprite.position.z;
             cardSprite.position = mousePosition;
@@ -51,18 +55,24 @@ namespace Malgo.FckCapitalism.Card
             // TODO: Check if drag to valid landscape
             Collider2D targetLandscape = Physics2D.OverlapPoint(MouseUtility.GetMouseWorldPosition(), landscapeMask);
 
-            SetDefaultPosition();
+
+            SetDefaultTransform();
+
+            isDragging = true;
         }
 
         private void OnMouseExit()
         {
-            cardSprite.localScale = Vector3.one;
-            cardSprite.localRotation = Quaternion.Euler(Vector3.zero);
-            cardSprite.localPosition = defaultPosition;
+            if (!isDragging)
+            {
+                SetDefaultTransform();
+            }
         }
 
-        private void SetDefaultPosition()
+        private void SetDefaultTransform()
         {
+            cardSprite.localScale = Vector3.one;
+            cardSprite.localRotation = Quaternion.Euler(Vector3.zero);
             cardSprite.localPosition = defaultPosition;
         }
 

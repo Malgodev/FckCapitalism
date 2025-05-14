@@ -6,7 +6,7 @@ namespace Malgo.FckCapitalism
 {
     public class GameManager : Singleton<GameManager>
     {
-        [SerializeField] private GameState gameState = GameState.MainMenu;
+        [SerializeField] private GameState gameState = GameState.Pause;
         public GameState GameState => gameState;
 
         public static event Action<GameState> OnGameStateChanged;
@@ -41,9 +41,6 @@ namespace Malgo.FckCapitalism
         {
             switch (gameState)
             {
-                case GameState.MainMenu:
-                    // Handle main menu state
-                    break;
                 case GameState.Playing:
                     // Handle playing state
                     break;
@@ -62,7 +59,6 @@ namespace Malgo.FckCapitalism
 
     public enum GameState
     {
-        MainMenu,
         Playing,
         Pause,
         End,
