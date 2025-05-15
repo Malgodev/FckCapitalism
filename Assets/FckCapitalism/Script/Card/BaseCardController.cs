@@ -1,3 +1,4 @@
+using Malgo.FckCapitalism.Landscape;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -11,6 +12,9 @@ namespace Malgo.FckCapitalism.Card
 
         private int index;
 
+        CardData cardData;
+
+        [Header("Components")]
         [SerializeField] private Transform mainCard;
         [SerializeField] private SpriteRenderer cardSprite;
         [SerializeField] private LayerMask landscapeMask;
@@ -27,7 +31,7 @@ namespace Malgo.FckCapitalism.Card
         Vector3 mousePosition;
 
         private bool isDragging = false;
-
+        public bool IsDragging => isDragging;
         private void Awake()
         {
             cardCollider = GetComponent<BoxCollider>();
@@ -39,7 +43,14 @@ namespace Malgo.FckCapitalism.Card
             cardName.text = cardData.cardName;
             cardSprite.sprite = cardData.cardSprite;
 
+            this.cardData = cardData;
 
+            defaultPosition = mainCard.localPosition;
+            defaultRotation = this.transform.localRotation.eulerAngles;
+        }
+
+        public void UpdateTransform()
+        {
             defaultPosition = mainCard.localPosition;
             defaultRotation = this.transform.localRotation.eulerAngles;
         }
@@ -62,13 +73,25 @@ namespace Malgo.FckCapitalism.Card
 
         private void OnMouseUp()
         {
-            // TODO: Check if drag to valid landscape
             Collider2D targetLandscape = Physics2D.OverlapPoint(MouseUtility.GetMouseWorldPosition(), landscapeMask);
+            
+            if (targetLandscape == null)
+            {
+                SetDefaultTransform();
+                return;
+            }
 
+            BaseLandscapeController landscapeController = targetLandscape?.GetComponent<BaseLandscapeController>();
 
-            SetDefaultTransform();
-
-            isDragging = true;
+            if (cardData.applicableLandscapes.IndexOf(landscapeController.LandscapeType) == -1)
+            {
+                SetDefaultTransform();
+            }
+            else
+            {
+                landscapeController.OnCardApply(cardData);
+                HandController.Instance.RemoveCard(this);
+            }
         }
 
         private void OnMouseExit()
@@ -81,6 +104,8 @@ namespace Malgo.FckCapitalism.Card
 
         private void SetDefaultTransform()
         {
+            isDragging = false;
+
             mainCard.localScale = Vector3.one;
             mainCard.localRotation = Quaternion.Euler(Vector3.zero);
             mainCard.localPosition = defaultPosition;

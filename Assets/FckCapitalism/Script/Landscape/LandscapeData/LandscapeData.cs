@@ -40,7 +40,7 @@ namespace Malgo.FckCapitalism.Landscape
     }
 
     [Serializable]
-    public struct LandscapeStatData
+    public class LandscapeStatData
     {
         public LandscapeStat Stat;
         public float Value;
@@ -55,14 +55,32 @@ namespace Malgo.FckCapitalism.Landscape
             MaxValue = maxValue;
         }
 
+        public LandscapeStatData(LandscapeStatData landscapeStatData)
+        {
+            Stat = landscapeStatData.Stat;
+            Value = landscapeStatData.Value;
+            MaxValue = landscapeStatData.MaxValue;
+        }
+
         public void SetValue(float value)
         {
             Value = value;
         }
 
-        public void IncreaseValue(float value)
+        public void ChangeValue_Add(float value)
         {
             Value += value;
+            if (MaxValue != 0 && Value > MaxValue)
+            {
+                Value = MaxValue;
+            }
+
+            Value = Value >= 0 ? Value : 0;
+        }
+
+        public void ChangeValue_Mul(float value)
+        {
+            Value *= (1 + value / 100f);
             if (MaxValue != 0 && Value > MaxValue)
             {
                 Value = MaxValue;

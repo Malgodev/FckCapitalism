@@ -57,7 +57,8 @@ namespace Malgo.FckCapitalism.UI.SidePanel
 
         public void UpdateFill(float value)
         {
-            fillImage.fillAmount = value;
+
+            fillImage.fillAmount = value / 100f;
             fillText.text = value.ToString("F1") + "%";
         }
     }

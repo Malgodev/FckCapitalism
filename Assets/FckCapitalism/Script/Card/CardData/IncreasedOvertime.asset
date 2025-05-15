@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e7475b4cb098ca4bb3a88946b80caef, type: 3}
-  m_Name: MandatoryOvertime
+  m_Name: IncreasedOvertime
   m_EditorClassIdentifier: 
-  cardName: Mandatory Overtime
+  cardName: Increased Overtime
   cardSprite: {fileID: 4933740715446256293, guid: 67afdf47f8480234ab60515f078b4b5d, type: 3}
-  applicableLandscapes: 
-  initialEffects: []
-  monthlyEffects: []
+  applicableLandscapes: 000000000100000003000000040000000500000007000000
+  initialEffects:
+  - Stat: 0
+    value: 20
+  - Stat: 2
+    value: 10
+  monthlyEffects:
+  - Stat: 2
+    value: 0.5

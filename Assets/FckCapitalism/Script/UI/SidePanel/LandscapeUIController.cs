@@ -45,7 +45,13 @@ namespace Malgo.FckCapitalism.UI.SidePanel
         private void OnEnable()
         {
             BaseLandscapeController.OnSidePanelUpdated += BaseLandscapeController_OnSidePanelUpdated;
+            GameData.OnSecondPassed += GameData_OnSecondPassed; ;
 
+            BaseLandscapeController_OnSidePanelUpdated();
+        }
+
+        private void GameData_OnSecondPassed(float obj)
+        {
             BaseLandscapeController_OnSidePanelUpdated();
         }
 
@@ -55,7 +61,7 @@ namespace Malgo.FckCapitalism.UI.SidePanel
 
             foreach (KeyValuePair<LandscapeStat, StatUIController> statUIController in statUIControllers)
             {
-                float value = landscapeController.GetLandscapeStat(statUIController.Key);
+                float value = landscapeController.GetLandscapeStatValue(statUIController.Key);
                 statUIController.Value.UpdateValue(value);
             }
         }
@@ -63,6 +69,7 @@ namespace Malgo.FckCapitalism.UI.SidePanel
         private void OnDisable()
         {
             BaseLandscapeController.OnSidePanelUpdated -= BaseLandscapeController_OnSidePanelUpdated;
+            GameData.OnSecondPassed -= GameData_OnSecondPassed;
         }
     }
 }

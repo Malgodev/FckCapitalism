@@ -11,12 +11,12 @@ namespace Malgo.FckCapitalism.Card
         public string cardName;
         public Sprite cardSprite;
         public List<LandscapeType> applicableLandscapes;
-        public List<LandscapeStatData> initialEffects;
-        public List<LandscapeStatData> monthlyEffects;
+        public List<LandscapeStatEffect> initialEffects;
+        public List<LandscapeStatEffect> monthlyEffects;
     }
 
     [Serializable]
-    public struct LandscapeStatData
+    public struct LandscapeStatEffect
     {
         public LandscapeStat Stat;
         public float value;

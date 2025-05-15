@@ -42218,7 +42218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardList:
-  - {fileID: 11400000, guid: a58a05344c78fd147a768b9c771241e2, type: 2}
+  - {fileID: 11400000, guid: 15576d7d2b3299349afbc317d8a334dd, type: 2}
   - {fileID: 11400000, guid: e2f8bd1806fa2d74ab0465edca081639, type: 2}
 --- !u!4 &731399523
 Transform:
@@ -48064,7 +48064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8722bbcccab1ba644beb6c62c7d83c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 1
+  gameState: 0
 --- !u!4 &1857055843
 Transform:
   m_ObjectHideFlags: 0

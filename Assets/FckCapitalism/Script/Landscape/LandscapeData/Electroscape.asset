@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Electroscape
   m_EditorClassIdentifier: 
   landscape: 0
+  specialStatValue: 0
   landscapeStats:
   - Stat: 0
     Value: 10

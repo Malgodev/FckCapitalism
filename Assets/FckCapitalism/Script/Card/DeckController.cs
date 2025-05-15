@@ -14,7 +14,7 @@ namespace Malgo.FckCapitalism.Card
 
         }
 
-        public List<CardData> GetHandCard(int numberOfCard)
+        public List<CardData> GenerateHandCard(int numberOfCard)
         {
             List<CardData> handCards = new List<CardData>();    
             for (int i = 0; i < numberOfCard; i++)
